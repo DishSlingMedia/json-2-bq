@@ -16,7 +16,7 @@ with open(filename, 'r') as f:
 # Assumes max nested of 1
 for column in genson_schema['properties']:
     nested = False
-    json_builder = ""
+    json_builder = json_builder = "obj.{} = values['{}']".format(lowerandunderscore(column),column)
     col_type =  genson_schema['properties'][column]['type']
     if col_type == 'object':
         nested = True
@@ -25,11 +25,11 @@ for column in genson_schema['properties']:
             	json_builder = "obj.{} = values['{}']['{}']".format(lowerandunderscore("{}_{}".format(column,nested_col)),column,nested_col)
                 list_of_jsonlines.append(json_builder)
     else:
-    	json_builder = "obj.{} = values['']".format(lowerandunderscore(column),column)
+    	json_builder = "obj.{} = values['{}']".format(lowerandunderscore(column),column)
 
     if nested == False:
         list_of_jsonlines.append(json_builder)
 
 for line in list_of_jsonlines:
 	print line
-
+    

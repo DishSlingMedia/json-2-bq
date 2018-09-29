@@ -2,7 +2,6 @@ import os
 import sys
 import json
 
-## NOT NULLABLE -- WHAT IS THIS IN BQ???
 filename = sys.argv[1]
 
 bq_schema = []
