@@ -36,7 +36,8 @@ for column in genson_schema['properties']:
     if col_type in data_types_map.keys():
         bq_col['name'] = lowerandunderscore(column)
         bq_col['type'] = data_types_map[col_type]
-        bq_col['mode'] = "NOT NULLABLE" if column in required else "NULLABLE"
+        ## FIGURE OUT WHAT TO DO ABOUT NOT NULLABLE!
+        bq_col['mode'] = "NULLABLE" if column in required else "NULLABLE" 
     elif col_type == 'object':
         nested = True
         if 'properties' in genson_schema['properties'][column].keys():
