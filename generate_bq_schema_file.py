@@ -57,8 +57,8 @@ for column in genson_schema['properties']:
 
 no_dup_elements = set()
 for element in bq_schema:
-    if element['name'] not in no_dup_elements:
-        no_dup_elements.add(element['name'])
+    if lowerandunderscore(element['name']) not in no_dup_elements:
+        no_dup_elements.add(lowerandunderscore(element['name']))
     else:
         bq_schema.remove(element)
 
