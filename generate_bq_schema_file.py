@@ -55,6 +55,13 @@ for column in genson_schema['properties']:
     if nested == False:
         bq_schema.append(bq_col)
 
+no_dup_elements = set()
+for element in bq_schema:
+    if element['name'] not in no_dup_elements:
+        no_dup_elements.add(element['name'])
+    else:
+        bq_schema.remove(element)
+
 
 with open('bq_schema.json', 'w') as f:
     bq_schema_json["BigQuery Schema"] = bq_schema

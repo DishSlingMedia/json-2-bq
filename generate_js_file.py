@@ -20,7 +20,7 @@ js_end = [
 list_of_jsonlines = []
 
 def lowerandunderscore(columnname):
-    return columnname.replace(' ', '_').lower().replace('/',' ') #if type(columnname) == string() else "oh"
+    return columnname.replace(' ', '_').lower().replace('/','_') #if type(columnname) == string() else "oh"
 
 #read file
 with open(filename, 'r') as f:
