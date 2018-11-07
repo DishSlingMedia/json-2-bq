@@ -4,7 +4,7 @@ This is meant to be a utility that takes a new-line json file, and generate the 
 
 ## How to do this - Steps:
 * For now, use genson as below, to write out to a schema file (instructions found on genson webpage -- update here?).
-`genson $FILENAME(newlinejson) > gensonfile.json`
+`genson $FILENAME(newlinejson) > schemafile.json`
 
 Use  `generate_js_file.py` and `generate_bq_schema_file.py` files with that schemafile by running `python generate_[...].py schemafile.json]`.
 
