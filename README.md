@@ -7,7 +7,7 @@ This is meant to be a utility that takes a new-line json file, and generate the 
 
 ### Open issues:
 * Data types (does this identify anything other than object and string/text)?
-* All one script -- rather than running schema generator separately.  
+* Turn into a single script -- rather than running schema generator separately.  
 
 ### Imports/Dependencies:
 * Genson (https://pypi.org/project/genson/)
